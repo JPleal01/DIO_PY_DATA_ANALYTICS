@@ -3,10 +3,20 @@ def prever_afinidade_elemental(intensidade, componente_raro, fase_lunar, idade_f
     # Convertendo a resposta do componente raro e afinidade com animais para booleanos
     componente_raro = componente_raro.lower() == "sim"
     afinidade_animais = afinidade_animais.lower() == "sim"
+    
 
     # Desenvolva a Lógica de decisão para prever a afinidade elemental
     if intensidade >= 5 and fase_lunar == "crescente" and idade_feiticeiro > 100:
         return "A afinidade elemental do feiticeiro é com o elemento Fogo!"
+    
+    if intensidade >= 7 and componente_raro  and fase_lunar == "cheia" and idade_feiticeiro <=100 and not afinidade_animais :
+        return "A afinidade elemental do feiticeiro é com o elemento Água!"
+    
+    if intensidade >= 7 and componente_raro  and fase_lunar == "cheia" and idade_feiticeiro <= 100 and afinidade_animais:
+        return "A afinidade elemental do feiticeiro é com o elemento Terra!"
+    
+    else:
+        return "A afinidade elemental do feiticeiro é com o elemento Ar!"
    
 
 # Entrada do usuário
